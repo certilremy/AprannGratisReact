@@ -10,7 +10,7 @@ class Author extends Component {
     return (
       <div>
         <h1>{this.state.name}</h1>
-        <h1>{this.state.eamil}</h1>
+        <p>{this.state.email}</p>
 
       </div>
     );
