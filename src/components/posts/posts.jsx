@@ -4,7 +4,7 @@ import Post from './post';
 class Posts extends Component {
   state = {};
   render () {
-    return <Post />;
+    return <Post />
   }
 }
 

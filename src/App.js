@@ -8,8 +8,8 @@ class App extends Component {
   render () {
     return (
       <Container>
-        <Posts />
         <Authors />
+        <Posts />
       </Container>
     );
   }

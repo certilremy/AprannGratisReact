@@ -1,19 +1,48 @@
 import React, {Component} from 'react';
 
 class Post extends Component {
+
   state = {
-    title: 'im a title',
-    content: "i'm a content",
+    post:[]
   };
 
-  render () {
+  render() {
     return (
       <div>
-        <h1>{this.state.title}</h1>
-        <h6>{this.state.content}</h6>
+        {this.state.post.map(post =>
+          <div key={post.id}>
+            <h2>
+              {post.title}
+            </h2>
+
+            <p>{post.content}</p>
+          </div>)}
+
       </div>
     );
   }
+
+  componentDidMount() {
+
+    let currentComponent = this;
+   // const apiEndp = 'https://jsonplaceholder.typicode.com/posts';
+    const apiEndp = 'https://obmc.pro/posts/api/json';
+    fetch(apiEndp)
+      .then(function (p) {
+        return p.json();
+      })
+      .then(function (p) {
+        console.log(p);
+        currentComponent.setState({
+          post: p
+        })
+      })
+
+  }
+
+
 }
 
 export default Post;
+
+

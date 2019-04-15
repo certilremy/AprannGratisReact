@@ -11,8 +11,8 @@ class Author extends Component {
     return (
       <div>
         {this.state.author.map(aut =>
-          <div>
-            <h2 key={aut.id}>
+          <div key= {aut.id}>
+            <h2>
               {aut.name}
               </h2>
           </div>)}
@@ -24,8 +24,7 @@ class Author extends Component {
   componentDidMount() {
   
   let currentComponent = this;
-    //const apiEn = 'https://jsonplaceholder.typicode.com/users';
-    const apiEn = 'http://obmc.pro/authors.json';
+    const apiEn = 'https://obmc.pro/authors.json';
     fetch(apiEn)
     .then(function (data) {
       return data.json();
