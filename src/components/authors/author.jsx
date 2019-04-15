@@ -1,20 +1,43 @@
 import React, {Component} from 'react';
 
 class Author extends Component {
+ 
+
   state = {
-    name: 'Certil',
-    email: 'c@gmail.com',
+    author:[]
   };
 
   render () {
     return (
       <div>
-        <h1>{this.state.name}</h1>
-        <p>{this.state.email}</p>
-
+        {this.state.author.map(aut =>
+          <div>
+            <h2 key={aut.id}>
+              {aut.name}
+              </h2>
+          </div>)}
+        
       </div>
     );
   }
+
+  componentDidMount() {
+  
+  let currentComponent = this;
+    //const apiEn = 'https://jsonplaceholder.typicode.com/users';
+    const apiEn = 'http://obmc.pro/authors.json';
+    fetch(apiEn)
+    .then(function (data) {
+      return data.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      currentComponent.setState({
+       author: data
+      })
+  })
+  
+}
 }
 
 export default Author;
