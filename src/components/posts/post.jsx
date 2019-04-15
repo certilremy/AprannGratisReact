@@ -14,8 +14,8 @@ class Post extends Component {
             <h2>
               {post.title}
             </h2>
-
             <p>{post.content}</p>
+            <p>by: {post.author.name}</p>
           </div>)}
 
       </div>
@@ -25,7 +25,7 @@ class Post extends Component {
   componentDidMount() {
 
     let currentComponent = this;
-   // const apiEndp = 'https://jsonplaceholder.typicode.com/posts';
+   
     const apiEndp = 'https://obmc.pro/posts/api/json';
     fetch(apiEndp)
       .then(function (p) {
