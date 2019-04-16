@@ -7,6 +7,7 @@ class Post extends Component {
   };
 
   render() {
+
     return (
       <div>
         {this.state.post.map(post =>
@@ -16,6 +17,16 @@ class Post extends Component {
             </h2>
             <p>{post.content}</p>
             <p>by: {post.author.name}</p>
+            <p>{post.categories.map(cat => 
+              <div>
+                    <p>cat.name</p>
+              </div> 
+            )}</p>
+            <p>{post.likes.map(like =>
+              <div>
+                <p>like.author.name</p>
+              </div>
+            )}</p>
           </div>)}
 
       </div>
