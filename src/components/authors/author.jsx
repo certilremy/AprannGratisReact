@@ -14,7 +14,8 @@ class Author extends Component {
           <div key= {aut.id}>
             <h2>
               {aut.name}
-              </h2>
+            </h2>
+            <p>{aut.posts.length} posts</p>
           </div>)}
         
       </div>
